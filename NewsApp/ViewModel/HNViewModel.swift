@@ -26,7 +26,7 @@ class HNViewModel {
          self.arrayOfList.removeAll()
         
         
-        newsService.SharedInstance.getListData2(url: Constant.K.Domain.ServerUrl, Controller: Controller, type: Constant.K.API.DefaultStoryType) { (success) in
+        newsService.SharedInstance.getListData(url: Constant.K.Domain.ServerUrl, Controller: Controller, type: Constant.K.API.DefaultStoryType) { (success) in
             
             if success {
                 
@@ -59,12 +59,12 @@ class HNViewModel {
     
     // Retrive Newest Stories From Request Manager
     
-    func getNewStories(completionHandler: @escaping (_ success: Bool) -> Void){
+    func getNewStories(Controller:UIViewController, completionHandler: @escaping (_ success: Bool) -> Void){
         
         
          self.arrayOfList.removeAll()
         
-        newsService.SharedInstance.getListData(url: Constant.K.Domain.ServerUrl, request: Constant.K.StoryType.new) { (success) in
+        newsService.SharedInstance.getListData(url: Constant.K.Domain.ServerUrl, Controller: Controller, type: Constant.K.API.DefaultStoryType) { (success) in
             
             
             if success {
@@ -83,12 +83,12 @@ class HNViewModel {
     
     // Retrive Recent Stories From Request Manager
     
-    func getRecentStories(completionHandler: @escaping (_ success: Bool) -> Void){
+    func getRecentStories(Controller:UIViewController, completionHandler: @escaping (_ success: Bool) -> Void){
         
         
          self.arrayOfList.removeAll()
         
-        newsService.SharedInstance.getListData(url: Constant.K.Domain.ServerUrl, request: Constant.K.StoryType.show) { (success) in
+        newsService.SharedInstance.getListData(url: Constant.K.Domain.ServerUrl, Controller: Controller, type: Constant.K.API.DefaultStoryType) { (success) in
             
             
             if success {

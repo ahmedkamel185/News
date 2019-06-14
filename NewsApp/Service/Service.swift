@@ -23,11 +23,12 @@ public class newsService {
     typealias CompletionHandler = (_ success:Bool) -> Void
     
     
-    func getListData2(url: String, Controller: UIViewController, type: Constant.K.StoryType,completionHandler: @escaping CompletionHandler) {
+    func getListData(url: String, Controller: UIViewController, type: Constant.K.StoryType,completionHandler: @escaping CompletionHandler) {
         
         let request = RequestManager()
         let url = url + Constant.K.API.StoryTypeChildRefMap[type]! + ".json?print=pretty"
-        
+       
+        self.arrayOfList.removeAll()
         
         
         let param: Dictionary<String, Any> = [:]
@@ -132,102 +133,6 @@ public class newsService {
     }
     
     
-    func getListData(url: String,request: Constant.K.StoryType,completionHandler: @escaping CompletionHandler) {
-        
-        
-        print("storytypes")
-        print(Constant.K.API.StoryTypeChildRefMap)
-        
-        guard let listURL = URL(string:  url + Constant.K.API.StoryTypeChildRefMap[request]! + ".json?print=pretty")else {
-            return
-        }
-        
-        
-        URLSession.shared.dataTask(with: listURL){
-            (data,response,error) in
-            guard let jsonData = data else { return }
-            do {
-                
-                let jsonDataString = String(data: data!, encoding: .utf8)
-                print(jsonDataString)
-                
-                
-                ///Using Decodable data parse
-                //  let decoder = JSONDecoder()
-                // self.arrayOfList = try decoder.decode([Story].self, from: jsonData)
-                
-                // print(self.arrayOfList)
-                print("222")
-                
-                let story = try JSONDecoder().decode([Int].self, from: data!)
-                print("222")
-                print(story.last)
-                
-                print("111")
-                
-                
-                
-                
-                for item in story.prefix(5) {
-                    
-                    guard let listURL = URL(string: "https://hacker-news.firebaseio.com/v0/item/\(item).json?print=pretty")else {
-                        return
-                    }
-                    
-                    
-                    URLSession.shared.dataTask(with: listURL){
-                        (data,response,error) in
-                        guard let jsonData = data else { return }
-                        do {
-                            
-                            let jsonDataString = String(data: data!, encoding: .utf8)
-                            print(jsonDataString)
-                            
-                            
-                            ///Using Decodable data parse
-                            //  let decoder = JSONDecoder()
-                            // self.arrayOfList = try decoder.decode([Story].self, from: jsonData)
-                            
-                            // print(self.arrayOfList)
-                            print("222")
-                           
-                          //  let storyItems = try JSONDecoder().decode(Story.self, from: data!)
-                            print("222")
-                            print()
-                            
-                            print("111")
-                            let flag = true // true if download succeed,false otherwise
-                            
-                           // self.arrayOfList.append(storyItems)
-                            print(self.arrayOfList[0].title)
-                            //  print(self.arrayOfList[4].title)
-                              completionHandler(flag)
-                            
-                            print(story.index(of: item))
-                            print("heeere")
-                        } catch let error {
-                            print("Error ->\(error.localizedDescription)")
-                            self.errorMessage(error.localizedDescription)
-                        }
-                        }.resume()
-                    
-                }
-                
-                
-                completionHandler(true)
-                //   https://hacker-news.firebaseio.com/v0/item/2921983.json?print=pretty
-                
-                
-            } catch let error {
-                 print("heeere")
-                print("Error ->\(error.localizedDescription)")
-                self.errorMessage(error.localizedDescription)
-            }
-            }.resume()
-        
-        
-        
-    }
     
     // Initialize the class
     

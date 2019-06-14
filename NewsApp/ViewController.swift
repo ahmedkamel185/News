@@ -76,7 +76,8 @@ var viewModel = HNViewModel()
             
             IndecatorView.show()
             
-            self.viewModel.getNewStories(){(success) in
+            self.viewModel.getNewStories(Controller: self){(success) in
+              
                 
                 
                 if success{
@@ -107,7 +108,7 @@ var viewModel = HNViewModel()
             
             IndecatorView.show()
             
-            self.viewModel.getRecentStories(){(success) in
+            self.viewModel.getRecentStories(Controller: self){(success) in
                 
                 
                 if success{
@@ -179,7 +180,7 @@ var viewModel = HNViewModel()
         
         cell.TitleLabelText?.text = newsService.SharedInstance.arrayOfList[indexPath.row].title
         
-        cell.DetailsLabelText?.text = "2222 + rerererer"
+        cell.DetailsLabelText?.text =  "By: " + newsService.SharedInstance.arrayOfList[indexPath.row].by + " Score: " + "\(newsService.SharedInstance.arrayOfList[indexPath.row].score)"
         
         
         return cell

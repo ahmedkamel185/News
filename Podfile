@@ -14,9 +14,6 @@ pod 'Alamofire'
     # Pods for testing
   end
 
-  target 'NewsAppUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+ 
+ 
 end

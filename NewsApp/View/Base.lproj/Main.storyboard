@@ -68,7 +68,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDS-pg-2RG">
-                                                    <rect key="frame" x="31" y="73" width="313" height="12"/>
+                                                    <rect key="frame" x="15" y="73" width="329" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.35397101683937826" green="0.35397101683937826" blue="0.35397101683937826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="vDS-pg-2RG" secondAttribute="trailing" constant="16" id="NEf-Zr-5o9"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="vDS-pg-2RG" secondAttribute="bottom" constant="16" id="Qcg-pX-yOm"/>
                                                 <constraint firstItem="C84-1o-s2s" firstAttribute="leading" secondItem="E0v-hJ-Ouf" secondAttribute="leading" constant="8" id="QqY-xo-d3P"/>
-                                                <constraint firstItem="vDS-pg-2RG" firstAttribute="leading" secondItem="E0v-hJ-Ouf" secondAttribute="leadingMargin" constant="16" id="hFy-X1-R5V"/>
+                                                <constraint firstItem="vDS-pg-2RG" firstAttribute="leading" secondItem="E0v-hJ-Ouf" secondAttribute="leadingMargin" id="hFy-X1-R5V"/>
                                                 <constraint firstAttribute="trailing" secondItem="C84-1o-s2s" secondAttribute="trailing" constant="8" id="kUZ-b8-NcK"/>
                                                 <constraint firstItem="C84-1o-s2s" firstAttribute="top" secondItem="E0v-hJ-Ouf" secondAttribute="top" constant="16" id="ohZ-Kg-q28"/>
                                             </constraints>
